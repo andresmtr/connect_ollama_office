@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>Ollama Local</title>
+    <link rel="stylesheet" href="styles.css?v=20260204"/>
+    <script src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js"></script>
+  </head>
+  <body>
+    <header class="header">
+      <div>
+        <h1>Ollama Local</h1>
+        <p>Genera contenido con tus modelos locales.</p>
+      </div>
+      <div class="status" id="status">Listo</div>
+    </header>
+
+    <main class="content">
+      <section class="card">
+        <label for="model">Modelo</label>
+        <div class="row">
+          <select id="model"></select>
+          <button id="refresh">Actualizar</button>
+        </div>
+        <label for="prompt">Prompt</label>
+        <textarea id="prompt" rows="8" placeholder="Escribe tu solicitud..."></textarea>
+        <div class="row">
+          <button id="generate" class="primary">Generar</button>
+          <button id="insert">Insertar en documento</button>
+        </div>
+      </section>
+
+      <section class="card">
+        <label for="output">Respuesta</label>
+        <textarea id="output" rows="10" readonly></textarea>
+      </section>
+
+      <section class="card small">
+        <h2>Conexión</h2>
+        <p>Servidor Ollama: <code>http://localhost:11434</code></p>
+        <p>Si usas HTTPS, habilita el acceso a localhost en Office.</p>
+      </section>
+    </main>
+
+    <script src="taskpane.js?v=20260204"></script>
+  </body>
+</html>

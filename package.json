@@ -1,0 +1,16 @@
+{
+  "name": "ollama-office-addin",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Office add-in (Word/Excel) conectado a Ollama local.",
+  "scripts": {
+    "start-dev": "node scripts/start-dev.js",
+    "clean-mac-cache": "node scripts/clean-mac-cache.js",
+    "clean-windows-cache": "powershell -ExecutionPolicy Bypass -File scripts/clean-windows-cache.ps1"
+  },
+  "devDependencies": {
+    "express": "^4.19.2",
+    "http-proxy-middleware": "^3.0.0",
+    "office-addin-dev-certs": "^1.12.1"
+  }
+}
