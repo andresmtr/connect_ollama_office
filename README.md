@@ -37,14 +37,19 @@ Esto instala certificados de desarrollo, sirve la carpeta en `https://localhost:
 Excel en Mac solo lee add-ins desde esta ruta:
 `~/Library/Containers/com.microsoft.Excel/Data/Documents/wef`
 
+Word en Mac solo lee add-ins desde esta ruta:
+`~/Library/Containers/com.microsoft.Word/Data/Documents/wef`
+
 1) Crea la carpeta (si no existe):
 ```
 mkdir -p ~/Library/Containers/com.microsoft.Excel/Data/Documents/wef
+mkdir -p ~/Library/Containers/com.microsoft.Word/Data/Documents/wef
 ```
 
 2) Copia SOLO el `manifest.xml`:
 ```
 cp manifest.xml ~/Library/Containers/com.microsoft.Excel/Data/Documents/wef/
+cp manifest.xml ~/Library/Containers/com.microsoft.Word/Data/Documents/wef/
 ```
 
 3) Borra cache (recomendado tras cambios):
@@ -55,8 +60,8 @@ cp manifest.xml ~/Library/Containers/com.microsoft.Excel/Data/Documents/wef/
 4) Cierra y abre Word/Excel, luego carga el add‑in.
 
 **Cambios recientes**
-- Bump de versión en `manifest.xml` → `1.0.1.0`
-- Cache‑buster en `taskpane.html` (`taskpane.js?v=20260204` y `styles.css?v=20260204`)
+- Bump de versión en `manifest.xml` → `1.0.7.0`
+- Cache‑buster en `taskpane.html` (`taskpane.js?v=20260204_7` y `styles.css?v=20260204_7`)
 
 Verifica que:
 `https://localhost:3000/taskpane.js` muestre:

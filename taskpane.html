@@ -4,7 +4,7 @@
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <title>Ollama Local</title>
-    <link rel="stylesheet" href="styles.css?v=20260204"/>
+    <link rel="stylesheet" href="styles.css?v=20260204_7"/>
     <script src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js"></script>
   </head>
   <body>
@@ -23,11 +23,74 @@
           <select id="model"></select>
           <button id="refresh">Actualizar</button>
         </div>
-        <label for="prompt">Prompt</label>
-        <textarea id="prompt" rows="8" placeholder="Escribe tu solicitud..."></textarea>
+        <label for="prompt">Prompt libre</label>
+        <textarea id="prompt" rows="6" placeholder="Escribe tu solicitud..."></textarea>
         <div class="row">
           <button id="generate" class="primary">Generar</button>
-          <button id="insert">Insertar en documento</button>
+          <button id="insert">Insertar resultado</button>
+        </div>
+      </section>
+
+      <section class="card" id="word-actions">
+        <h2>Acciones Word</h2>
+        <label for="word-action">Acción</label>
+        <select id="word-action">
+          <option value="correct">Corregir ortografía y estilo</option>
+          <option value="rewrite">Reescribir con tono</option>
+          <option value="summarize">Resumir selección</option>
+          <option value="keypoints">Extraer ideas clave</option>
+        </select>
+        <div class="row" id="word-tone-row">
+          <label for="word-tone">Tono</label>
+          <select id="word-tone">
+            <option value="formal">Formal</option>
+            <option value="breve">Breve</option>
+            <option value="academico">Académico</option>
+            <option value="simple">Simple</option>
+          </select>
+        </div>
+        <label for="word-extra">Instrucciones extra (opcional)</label>
+        <textarea id="word-extra" rows="3" placeholder="Ej: Mantén los nombres propios."></textarea>
+        <div class="row">
+          <button id="word-run" class="primary">Aplicar en Word</button>
+        </div>
+      </section>
+
+      <section class="card" id="excel-actions">
+        <h2>Acciones Excel</h2>
+        <label for="excel-output">Insertar resultado en</label>
+        <select id="excel-output">
+          <option value="right">Columna derecha</option>
+          <option value="below">Debajo</option>
+          <option value="active">Celda activa</option>
+          <option value="new_sheet">Nueva hoja</option>
+        </select>
+        <label for="excel-parallel">Procesamiento en paralelo</label>
+        <select id="excel-parallel">
+          <option value="1">1 (seguro)</option>
+          <option value="2">2</option>
+          <option value="4">4 (rápido)</option>
+        </select>
+        <label for="excel-action">Acción</label>
+        <select id="excel-action">
+          <option value="formula">Crear fórmula (EN)</option>
+          <option value="summarize_row">Resumir por fila</option>
+          <option value="summarize_range">Resumir rango completo</option>
+          <option value="stats">Extraer datos numéricos</option>
+          <option value="extract_numbers">Extraer números por fila</option>
+          <option value="rewrite_row">Reescribir por fila</option>
+          <option value="translate_row">Traducir por fila</option>
+          <option value="classify_row">Clasificar por fila</option>
+          <option value="clean_row">Limpiar/normalizar por fila</option>
+        </select>
+        <div id="excel-formula-row">
+          <label for="excel-formula-desc">Descripción de la fórmula</label>
+          <textarea id="excel-formula-desc" rows="3" placeholder="Ej: Suma la columna B solo donde la columna A sea &quot;Activo&quot;."></textarea>
+        </div>
+        <label for="excel-extra">Instrucciones extra (opcional)</label>
+        <textarea id="excel-extra" rows="3" placeholder="Ej: Responde en una sola frase."></textarea>
+        <div class="row">
+          <button id="excel-run" class="primary">Aplicar en Excel</button>
         </div>
       </section>
 
@@ -43,6 +106,6 @@
       </section>
     </main>
 
-    <script src="taskpane.js?v=20260204"></script>
+    <script src="taskpane.js?v=20260204_7"></script>
   </body>
 </html>
